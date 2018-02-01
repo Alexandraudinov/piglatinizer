@@ -8,21 +8,25 @@
 $(document).ready(function() {
 
 	$("#button").click(function() {
-		
-		var message = $("#input").val();
-		console.log(message);
 
-		$("#result").html(message);
+		var message = $("#input").val();
+		console.log(ay(message));
+		var output = ay(message);
+		$("#result").html(output);
 	});
 
 	function ay(word) {
 		return word + "ay";
 	}
 
-	function sentenceToPigLatin() {
-
+	function sentenceToPigLatin(sentence) {
+		var phrase = sentence.split(" ");
+		for (var i = 0; 1 < phrase.length; i++) {
+			var word = phrase[i]
+			phrase[i] = ay(word);
+		}
+		return phrase.join(" ");
 	}
-
 });
 
 
