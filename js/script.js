@@ -9,21 +9,22 @@ $(document).ready(function() {
 
 	$("#button").click(function() {
 
-		var message = $("#input").val();
-		console.log(ay(message));
-		var output = ay(message);
-		$("#result").html(output);
+		var message = sentenceToPigLatin($("#input").val());
+		$("#result").html(message);
 	});
 
 	function ay(word) {
-		return word + "ay";
+	var firstletter = word.slice(0,1);
+	var restofword = word.slice(1);
+		return restofword + firstletter + "ay";
+	if ( firstletter === a)	
 	}
 
 	function sentenceToPigLatin(sentence) {
 		var phrase = sentence.split(" ");
-		for (var i = 0; 1 < phrase.length; i++) {
-			var word = phrase[i]
-			phrase[i] = ay(word);
+		for (var i = 0; i < phrase.length; i++) {
+			var words = phrase[i]
+			phrase[i] = ay(words);
 		}
 		return phrase.join(" ");
 	}
